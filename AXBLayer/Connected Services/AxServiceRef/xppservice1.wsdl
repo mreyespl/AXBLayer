@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/services/Imports">
+      <xsd:import schemaLocation="http://devaospl.pl.corp/MicrosoftDynamicsAXAif60/AxDeploy/xppservice.svc?xsd=xsd13" namespace="http://schemas.microsoft.com/dynamics/2008/01/services" />
+      <xsd:import schemaLocation="http://devaospl.pl.corp/MicrosoftDynamicsAXAif60/AxDeploy/xppservice.svc?xsd=xsd14" namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" />
+      <xsd:import schemaLocation="http://devaospl.pl.corp/MicrosoftDynamicsAXAif60/AxDeploy/xppservice.svc?xsd=xsd16" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" />
+      <xsd:import schemaLocation="http://devaospl.pl.corp/MicrosoftDynamicsAXAif60/AxDeploy/xppservice.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://devaospl.pl.corp/MicrosoftDynamicsAXAif60/AxDeploy/xppservice.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/dynamics/2011/02/documents/DocumentPaging" />
+      <xsd:import schemaLocation="http://devaospl.pl.corp/MicrosoftDynamicsAXAif60/AxDeploy/xppservice.svc?xsd=xsd2" />
+      <xsd:import schemaLocation="http://devaospl.pl.corp/MicrosoftDynamicsAXAif60/AxDeploy/xppservice.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKeyList" />
+      <xsd:import schemaLocation="http://devaospl.pl.corp/MicrosoftDynamicsAXAif60/AxDeploy/xppservice.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/EntityKey" />
+      <xsd:import schemaLocation="http://devaospl.pl.corp/MicrosoftDynamicsAXAif60/AxDeploy/xppservice.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/dynamics/2011/02/documents/EntityKeyPage" />
+      <xsd:import schemaLocation="http://devaospl.pl.corp/MicrosoftDynamicsAXAif60/AxDeploy/xppservice.svc?xsd=xsd8" namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria" />
+      <xsd:import schemaLocation="http://devaospl.pl.corp/MicrosoftDynamicsAXAif60/AxDeploy/xppservice.svc?xsd=xsd9" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/EcoResProduct" />
+      <xsd:import schemaLocation="http://devaospl.pl.corp/MicrosoftDynamicsAXAif60/AxDeploy/xppservice.svc?xsd=xsd10" namespace="http://schemas.microsoft.com/dynamics/2008/01/sharedtypes" />
+      <xsd:import schemaLocation="http://devaospl.pl.corp/MicrosoftDynamicsAXAif60/AxDeploy/xppservice.svc?xsd=xsd11" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Item" />
+      <xsd:import schemaLocation="http://devaospl.pl.corp/MicrosoftDynamicsAXAif60/AxDeploy/xppservice.svc?xsd=xsd12" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/SalesQuotation" />
+      <xsd:import schemaLocation="http://devaospl.pl.corp/MicrosoftDynamicsAXAif60/AxDeploy/xppservice.svc?xsd=xsd15" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://devaospl.pl.corp/MicrosoftDynamicsAXAif60/AxDeploy/xppservice.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="EcoResProductServiceFindRequest">
+    <wsdl:part name="parameters" element="tns:EcoResProductServiceFindRequest" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductServiceFindRequest_Headers">
+    <wsdl:part xmlns:q1="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q1:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductServiceFindResponse">
+    <wsdl:part name="parameters" element="tns:EcoResProductServiceFindResponse" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductService_find_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q2:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductServiceFindKeysRequest">
+    <wsdl:part name="parameters" element="tns:EcoResProductServiceFindKeysRequest" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductServiceFindKeysRequest_Headers">
+    <wsdl:part xmlns:q3="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q3:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductServiceFindKeysResponse">
+    <wsdl:part name="parameters" element="tns:EcoResProductServiceFindKeysResponse" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductService_findKeys_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q4:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductServiceGetChangedKeysRequest">
+    <wsdl:part name="parameters" element="tns:EcoResProductServiceGetChangedKeysRequest" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductServiceGetChangedKeysRequest_Headers">
+    <wsdl:part xmlns:q5="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q5:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductServiceGetChangedKeysResponse">
+    <wsdl:part name="parameters" element="tns:EcoResProductServiceGetChangedKeysResponse" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductService_getChangedKeys_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q6:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductServiceGetKeysRequest">
+    <wsdl:part name="parameters" element="tns:EcoResProductServiceGetKeysRequest" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductServiceGetKeysRequest_Headers">
+    <wsdl:part xmlns:q7="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q7:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductServiceGetKeysResponse">
+    <wsdl:part name="parameters" element="tns:EcoResProductServiceGetKeysResponse" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductService_getKeys_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q8:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductServiceReadRequest">
+    <wsdl:part name="parameters" element="tns:EcoResProductServiceReadRequest" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductServiceReadRequest_Headers">
+    <wsdl:part xmlns:q9="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q9:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductServiceReadResponse">
+    <wsdl:part name="parameters" element="tns:EcoResProductServiceReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductService_read_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q10:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductServiceCreateRequest">
+    <wsdl:part name="parameters" element="tns:EcoResProductServiceCreateRequest" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductServiceCreateRequest_Headers">
+    <wsdl:part xmlns:q11="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q11:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductServiceCreateResponse">
+    <wsdl:part name="parameters" element="tns:EcoResProductServiceCreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductService_create_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q12:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductServiceUpdateRequest">
+    <wsdl:part name="parameters" element="tns:EcoResProductServiceUpdateRequest" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductServiceUpdateRequest_Headers">
+    <wsdl:part xmlns:q13="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q13:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductServiceUpdateResponse">
+    <wsdl:part name="parameters" element="tns:EcoResProductServiceUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="EcoResProductService_update_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q14:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="ItemServiceFindRequest">
+    <wsdl:part name="parameters" element="tns:ItemServiceFindRequest" />
+  </wsdl:message>
+  <wsdl:message name="ItemServiceFindRequest_Headers">
+    <wsdl:part xmlns:q15="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q15:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="ItemServiceFindResponse">
+    <wsdl:part name="parameters" element="tns:ItemServiceFindResponse" />
+  </wsdl:message>
+  <wsdl:message name="ItemService_find_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q16:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="ItemServiceFindKeysRequest">
+    <wsdl:part name="parameters" element="tns:ItemServiceFindKeysRequest" />
+  </wsdl:message>
+  <wsdl:message name="ItemServiceFindKeysRequest_Headers">
+    <wsdl:part xmlns:q17="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q17:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="ItemServiceFindKeysResponse">
+    <wsdl:part name="parameters" element="tns:ItemServiceFindKeysResponse" />
+  </wsdl:message>
+  <wsdl:message name="ItemService_findKeys_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q18:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="ItemServiceCreateRequest">
+    <wsdl:part name="parameters" element="tns:ItemServiceCreateRequest" />
+  </wsdl:message>
+  <wsdl:message name="ItemServiceCreateRequest_Headers">
+    <wsdl:part xmlns:q19="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q19:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="ItemServiceCreateResponse">
+    <wsdl:part name="parameters" element="tns:ItemServiceCreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ItemService_create_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q20:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="ItemServiceGetChangedKeysRequest">
+    <wsdl:part name="parameters" element="tns:ItemServiceGetChangedKeysRequest" />
+  </wsdl:message>
+  <wsdl:message name="ItemServiceGetChangedKeysRequest_Headers">
+    <wsdl:part xmlns:q21="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q21:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="ItemServiceGetChangedKeysResponse">
+    <wsdl:part name="parameters" element="tns:ItemServiceGetChangedKeysResponse" />
+  </wsdl:message>
+  <wsdl:message name="ItemService_getChangedKeys_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q22:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="ItemServiceGetKeysRequest">
+    <wsdl:part name="parameters" element="tns:ItemServiceGetKeysRequest" />
+  </wsdl:message>
+  <wsdl:message name="ItemServiceGetKeysRequest_Headers">
+    <wsdl:part xmlns:q23="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q23:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="ItemServiceGetKeysResponse">
+    <wsdl:part name="parameters" element="tns:ItemServiceGetKeysResponse" />
+  </wsdl:message>
+  <wsdl:message name="ItemService_getKeys_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q24:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="ItemServiceReadRequest">
+    <wsdl:part name="parameters" element="tns:ItemServiceReadRequest" />
+  </wsdl:message>
+  <wsdl:message name="ItemServiceReadRequest_Headers">
+    <wsdl:part xmlns:q25="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q25:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="ItemServiceReadResponse">
+    <wsdl:part name="parameters" element="tns:ItemServiceReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ItemService_read_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q26:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationServiceGetChangedKeysRequest">
+    <wsdl:part name="parameters" element="tns:SalesSalesQuotationServiceGetChangedKeysRequest" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationServiceGetChangedKeysRequest_Headers">
+    <wsdl:part xmlns:q27="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q27:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationServiceGetChangedKeysResponse">
+    <wsdl:part name="parameters" element="tns:SalesSalesQuotationServiceGetChangedKeysResponse" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationService_getChangedKeys_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q28:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationServiceFindKeysRequest">
+    <wsdl:part name="parameters" element="tns:SalesSalesQuotationServiceFindKeysRequest" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationServiceFindKeysRequest_Headers">
+    <wsdl:part xmlns:q29="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q29:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationServiceFindKeysResponse">
+    <wsdl:part name="parameters" element="tns:SalesSalesQuotationServiceFindKeysResponse" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationService_findKeys_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q30:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationServiceCreateRequest">
+    <wsdl:part name="parameters" element="tns:SalesSalesQuotationServiceCreateRequest" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationServiceCreateRequest_Headers">
+    <wsdl:part xmlns:q31="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q31:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationServiceCreateResponse">
+    <wsdl:part name="parameters" element="tns:SalesSalesQuotationServiceCreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationService_create_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q32:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationServiceGetKeysRequest">
+    <wsdl:part name="parameters" element="tns:SalesSalesQuotationServiceGetKeysRequest" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationServiceGetKeysRequest_Headers">
+    <wsdl:part xmlns:q33="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q33:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationServiceGetKeysResponse">
+    <wsdl:part name="parameters" element="tns:SalesSalesQuotationServiceGetKeysResponse" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationService_getKeys_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q34:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationServiceUpdateRequest">
+    <wsdl:part name="parameters" element="tns:SalesSalesQuotationServiceUpdateRequest" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationServiceUpdateRequest_Headers">
+    <wsdl:part xmlns:q35="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q35:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationServiceUpdateResponse">
+    <wsdl:part name="parameters" element="tns:SalesSalesQuotationServiceUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationService_update_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q36:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationServiceFindRequest">
+    <wsdl:part name="parameters" element="tns:SalesSalesQuotationServiceFindRequest" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationServiceFindRequest_Headers">
+    <wsdl:part xmlns:q37="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q37:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationServiceFindResponse">
+    <wsdl:part name="parameters" element="tns:SalesSalesQuotationServiceFindResponse" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationService_find_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q38="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q38:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationServiceReadRequest">
+    <wsdl:part name="parameters" element="tns:SalesSalesQuotationServiceReadRequest" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationServiceReadRequest_Headers">
+    <wsdl:part xmlns:q39="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q39:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationServiceReadResponse">
+    <wsdl:part name="parameters" element="tns:SalesSalesQuotationServiceReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationService_read_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q40="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q40:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationServiceDeleteRequest">
+    <wsdl:part name="parameters" element="tns:SalesSalesQuotationServiceDeleteRequest" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationServiceDeleteRequest_Headers">
+    <wsdl:part xmlns:q41="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q41:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationServiceDeleteResponse">
+    <wsdl:part name="parameters" element="tns:SalesSalesQuotationServiceDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="SalesSalesQuotationService_delete_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q42="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q42:AifFault" />
+  </wsdl:message>
+  <wsdl:portType name="EcoResProductService">
+    <wsdl:operation name="find">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/EcoResProductService/find" name="EcoResProductServiceFindRequest" message="tns:EcoResProductServiceFindRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/EcoResProductService/findResponse" name="EcoResProductServiceFindResponse" message="tns:EcoResProductServiceFindResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/EcoResProductService/findAifFaultFault" name="AifFaultFault" message="tns:EcoResProductService_find_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="findKeys">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/EcoResProductService/findKeys" name="EcoResProductServiceFindKeysRequest" message="tns:EcoResProductServiceFindKeysRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/EcoResProductService/findKeysResponse" name="EcoResProductServiceFindKeysResponse" message="tns:EcoResProductServiceFindKeysResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/EcoResProductService/findKeysAifFaultFault" name="AifFaultFault" message="tns:EcoResProductService_findKeys_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getChangedKeys">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/EcoResProductService/getChangedKeys" name="EcoResProductServiceGetChangedKeysRequest" message="tns:EcoResProductServiceGetChangedKeysRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/EcoResProductService/getChangedKeysResponse" name="EcoResProductServiceGetChangedKeysResponse" message="tns:EcoResProductServiceGetChangedKeysResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/EcoResProductService/getChangedKeysAifFaultFault" name="AifFaultFault" message="tns:EcoResProductService_getChangedKeys_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getKeys">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/EcoResProductService/getKeys" name="EcoResProductServiceGetKeysRequest" message="tns:EcoResProductServiceGetKeysRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/EcoResProductService/getKeysResponse" name="EcoResProductServiceGetKeysResponse" message="tns:EcoResProductServiceGetKeysResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/EcoResProductService/getKeysAifFaultFault" name="AifFaultFault" message="tns:EcoResProductService_getKeys_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/EcoResProductService/read" name="EcoResProductServiceReadRequest" message="tns:EcoResProductServiceReadRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/EcoResProductService/readResponse" name="EcoResProductServiceReadResponse" message="tns:EcoResProductServiceReadResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/EcoResProductService/readAifFaultFault" name="AifFaultFault" message="tns:EcoResProductService_read_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/EcoResProductService/create" name="EcoResProductServiceCreateRequest" message="tns:EcoResProductServiceCreateRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/EcoResProductService/createResponse" name="EcoResProductServiceCreateResponse" message="tns:EcoResProductServiceCreateResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/EcoResProductService/createAifFaultFault" name="AifFaultFault" message="tns:EcoResProductService_create_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/EcoResProductService/update" name="EcoResProductServiceUpdateRequest" message="tns:EcoResProductServiceUpdateRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/EcoResProductService/updateResponse" name="EcoResProductServiceUpdateResponse" message="tns:EcoResProductServiceUpdateResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/EcoResProductService/updateAifFaultFault" name="AifFaultFault" message="tns:EcoResProductService_update_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ItemService">
+    <wsdl:operation name="find">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/ItemService/find" name="ItemServiceFindRequest" message="tns:ItemServiceFindRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/ItemService/findResponse" name="ItemServiceFindResponse" message="tns:ItemServiceFindResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/ItemService/findAifFaultFault" name="AifFaultFault" message="tns:ItemService_find_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="findKeys">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/ItemService/findKeys" name="ItemServiceFindKeysRequest" message="tns:ItemServiceFindKeysRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/ItemService/findKeysResponse" name="ItemServiceFindKeysResponse" message="tns:ItemServiceFindKeysResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/ItemService/findKeysAifFaultFault" name="AifFaultFault" message="tns:ItemService_findKeys_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/ItemService/create" name="ItemServiceCreateRequest" message="tns:ItemServiceCreateRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/ItemService/createResponse" name="ItemServiceCreateResponse" message="tns:ItemServiceCreateResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/ItemService/createAifFaultFault" name="AifFaultFault" message="tns:ItemService_create_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getChangedKeys">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/ItemService/getChangedKeys" name="ItemServiceGetChangedKeysRequest" message="tns:ItemServiceGetChangedKeysRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/ItemService/getChangedKeysResponse" name="ItemServiceGetChangedKeysResponse" message="tns:ItemServiceGetChangedKeysResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/ItemService/getChangedKeysAifFaultFault" name="AifFaultFault" message="tns:ItemService_getChangedKeys_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getKeys">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/ItemService/getKeys" name="ItemServiceGetKeysRequest" message="tns:ItemServiceGetKeysRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/ItemService/getKeysResponse" name="ItemServiceGetKeysResponse" message="tns:ItemServiceGetKeysResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/ItemService/getKeysAifFaultFault" name="AifFaultFault" message="tns:ItemService_getKeys_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/ItemService/read" name="ItemServiceReadRequest" message="tns:ItemServiceReadRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/ItemService/readResponse" name="ItemServiceReadResponse" message="tns:ItemServiceReadResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/ItemService/readAifFaultFault" name="AifFaultFault" message="tns:ItemService_read_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SalesSalesQuotationService">
+    <wsdl:operation name="getChangedKeys">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/SalesSalesQuotationService/getChangedKeys" name="SalesSalesQuotationServiceGetChangedKeysRequest" message="tns:SalesSalesQuotationServiceGetChangedKeysRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/SalesSalesQuotationService/getChangedKeysResponse" name="SalesSalesQuotationServiceGetChangedKeysResponse" message="tns:SalesSalesQuotationServiceGetChangedKeysResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/SalesSalesQuotationService/getChangedKeysAifFaultFault" name="AifFaultFault" message="tns:SalesSalesQuotationService_getChangedKeys_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="findKeys">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/SalesSalesQuotationService/findKeys" name="SalesSalesQuotationServiceFindKeysRequest" message="tns:SalesSalesQuotationServiceFindKeysRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/SalesSalesQuotationService/findKeysResponse" name="SalesSalesQuotationServiceFindKeysResponse" message="tns:SalesSalesQuotationServiceFindKeysResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/SalesSalesQuotationService/findKeysAifFaultFault" name="AifFaultFault" message="tns:SalesSalesQuotationService_findKeys_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/SalesSalesQuotationService/create" name="SalesSalesQuotationServiceCreateRequest" message="tns:SalesSalesQuotationServiceCreateRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/SalesSalesQuotationService/createResponse" name="SalesSalesQuotationServiceCreateResponse" message="tns:SalesSalesQuotationServiceCreateResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/SalesSalesQuotationService/createAifFaultFault" name="AifFaultFault" message="tns:SalesSalesQuotationService_create_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getKeys">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/SalesSalesQuotationService/getKeys" name="SalesSalesQuotationServiceGetKeysRequest" message="tns:SalesSalesQuotationServiceGetKeysRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/SalesSalesQuotationService/getKeysResponse" name="SalesSalesQuotationServiceGetKeysResponse" message="tns:SalesSalesQuotationServiceGetKeysResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/SalesSalesQuotationService/getKeysAifFaultFault" name="AifFaultFault" message="tns:SalesSalesQuotationService_getKeys_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/SalesSalesQuotationService/update" name="SalesSalesQuotationServiceUpdateRequest" message="tns:SalesSalesQuotationServiceUpdateRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/SalesSalesQuotationService/updateResponse" name="SalesSalesQuotationServiceUpdateResponse" message="tns:SalesSalesQuotationServiceUpdateResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/SalesSalesQuotationService/updateAifFaultFault" name="AifFaultFault" message="tns:SalesSalesQuotationService_update_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="find">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/SalesSalesQuotationService/find" name="SalesSalesQuotationServiceFindRequest" message="tns:SalesSalesQuotationServiceFindRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/SalesSalesQuotationService/findResponse" name="SalesSalesQuotationServiceFindResponse" message="tns:SalesSalesQuotationServiceFindResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/SalesSalesQuotationService/findAifFaultFault" name="AifFaultFault" message="tns:SalesSalesQuotationService_find_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/SalesSalesQuotationService/read" name="SalesSalesQuotationServiceReadRequest" message="tns:SalesSalesQuotationServiceReadRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/SalesSalesQuotationService/readResponse" name="SalesSalesQuotationServiceReadResponse" message="tns:SalesSalesQuotationServiceReadResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/SalesSalesQuotationService/readAifFaultFault" name="AifFaultFault" message="tns:SalesSalesQuotationService_read_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/SalesSalesQuotationService/delete" name="SalesSalesQuotationServiceDeleteRequest" message="tns:SalesSalesQuotationServiceDeleteRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/SalesSalesQuotationService/deleteResponse" name="SalesSalesQuotationServiceDeleteResponse" message="tns:SalesSalesQuotationServiceDeleteResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/SalesSalesQuotationService/deleteAifFaultFault" name="AifFaultFault" message="tns:SalesSalesQuotationService_delete_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

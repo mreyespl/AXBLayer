@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.microsoft.com/dynamics/2008/01/documents/SalesQuotation" xmlns:st="http://schemas.microsoft.com/dynamics/2008/01/sharedtypes" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/documents/SalesQuotation" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://devaospl.pl.corp/MicrosoftDynamicsAXAif60/AxDeploy/xppservice.svc?xsd=xsd10" namespace="http://schemas.microsoft.com/dynamics/2008/01/sharedtypes" />
+  <xs:element name="SalesQuotation" type="tns:AxdSalesQuotation" />
+  <xs:complexType name="AxdSalesQuotation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesQuotationTable" type="tns:AxdEntity_SalesQuotationTable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_SalesQuotationTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DefaultDimension" nillable="true" type="st:AxdType_DimensionAttributeValueSet" />
+      <xs:element minOccurs="1" name="ReceiptDateRequested" type="st:AxdExtType_SalesReceiptDateRequested" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesQuotationLine" type="tns:AxdEntity_SalesQuotationLine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MarkupTransHeader" type="tns:AxdEntity_MarkupTransHeader" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_SalesQuotationLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DefaultDimension" nillable="true" type="st:AxdType_DimensionAttributeValueSet" />
+      <xs:element minOccurs="1" name="SalesQty" type="st:AxdExtType_SalesQty" />
+      <xs:element minOccurs="1" name="SalesUnit" type="st:AxdUnion_AxdExtType_SalesUnit_AxdType_ExtCodeValue" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MarkupTransLine" type="tns:AxdEntity_MarkupTransLine" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_MarkupTransLine">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="MarkupCode" type="st:AxdUnion_AxdExtType_MarkupCode_AxdType_ExtCodeValue" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_MarkupTransHeader">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="MarkupCode" type="st:AxdUnion_AxdExtType_MarkupCode_AxdType_ExtCodeValue" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+</xs:schema>

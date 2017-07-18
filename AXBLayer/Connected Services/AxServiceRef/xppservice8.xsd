@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.microsoft.com/dynamics/2008/01/documents/Item" xmlns:st="http://schemas.microsoft.com/dynamics/2008/01/sharedtypes" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Item" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://devaospl.pl.corp/MicrosoftDynamicsAXAif60/AxDeploy/xppservice.svc?xsd=xsd10" namespace="http://schemas.microsoft.com/dynamics/2008/01/sharedtypes" />
+  <xs:element name="Item" type="tns:AxdItem" />
+  <xs:complexType name="AxdItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InventTable" type="tns:AxdEntity_InventTable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_InventTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DefaultDimension" nillable="true" type="st:AxdType_DimensionAttributeValueSet" />
+      <xs:element minOccurs="0" name="ItemId" nillable="true" type="st:AxdExtType_ItemId" />
+      <xs:element minOccurs="0" name="NameAlias" nillable="true" type="st:AxdExtType_ItemNameAlias" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Sales" type="tns:AxdEntity_Sales" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Purch" type="tns:AxdEntity_Purch" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Invent" type="tns:AxdEntity_Invent" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InventTableDocuRef" type="tns:AxdEntity_InventTableDocuRef" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InventItemSalesSetup" type="tns:AxdEntity_InventItemSalesSetup" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InventItemPurchSetup" type="tns:AxdEntity_InventItemPurchSetup" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InventItemInventSetup" type="tns:AxdEntity_InventItemInventSetup" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageDimensionGroup" type="tns:AxdEntity_StorageDimensionGroup" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrackingDimensionGroup" type="tns:AxdEntity_TrackingDimensionGroup" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PdsCatchWeightItem" type="tns:AxdEntity_PdsCatchWeightItem" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WHSReservationHierarchyItem" type="tns:AxdEntity_WHSReservationHierarchyItem" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WHSInventTable" type="tns:AxdEntity_WHSInventTable" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WHSInventFixedLocation" type="tns:AxdEntity_WHSInventFixedLocation" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MCRInventTable" type="tns:AxdEntity_MCRInventTable" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_Sales">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="ItemId" type="st:AxdExtType_ItemId" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_Purch">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="ItemId" type="st:AxdExtType_ItemId" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_Invent">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="ItemId" type="st:AxdExtType_ItemId" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_InventTableDocuRef">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="st:AxdExtType_Description" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_InventItemSalesSetup">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="ItemId" type="st:AxdUnion_AxdExtType_ItemId_AxdType_ExtCodeValue" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_InventItemPurchSetup">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="ItemId" type="st:AxdUnion_AxdExtType_ItemId_AxdType_ExtCodeValue" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_InventItemInventSetup">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="ItemId" type="st:AxdUnion_AxdExtType_ItemId_AxdType_ExtCodeValue" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_StorageDimensionGroup">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="StorageDimensionGroup" type="st:AxdExtType_EcoResStorageDimensionGroupName" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_TrackingDimensionGroup">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="TrackingDimensionGroup" type="st:AxdExtType_EcoResTrackingDimensionGroupName" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_PdsCatchWeightItem">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="ItemId" type="st:AxdExtType_ItemId" />
+      <xs:element minOccurs="1" name="PdsCWUnitId" type="st:AxdExtType_PdsCWUnitId" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_WHSReservationHierarchyItem">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="ReservationHierarchy" type="st:AxdExtType_WHSReservationHierarchyName" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_WHSInventTable">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="ItemId" type="st:AxdUnion_AxdExtType_ItemId_AxdType_ExtCodeValue" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_WHSInventFixedLocation">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="InventLocationId" type="st:AxdExtType_InventLocationId" />
+      <xs:element minOccurs="1" name="InventSiteId" type="st:AxdExtType_InventSiteId" />
+      <xs:element minOccurs="1" name="ItemId" type="st:AxdUnion_AxdExtType_ItemId_AxdType_ExtCodeValue" />
+      <xs:element minOccurs="1" name="WMSLocationId" type="st:AxdExtType_WMSLocationId" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_MCRInventTable">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="InventTable" type="st:AxdExtType_MCRInventTableRefRecId" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+</xs:schema>

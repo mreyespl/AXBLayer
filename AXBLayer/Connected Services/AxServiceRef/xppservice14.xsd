@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.microsoft.com/dynamics/2008/01/documents/EcoResProduct" xmlns:st="http://schemas.microsoft.com/dynamics/2008/01/sharedtypes" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/documents/EcoResProduct" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://devaospl.pl.corp/MicrosoftDynamicsAXAif60/AxDeploy/xppservice.svc?xsd=xsd10" namespace="http://schemas.microsoft.com/dynamics/2008/01/sharedtypes" />
+  <xs:element name="EcoResProduct" type="tns:AxdEcoResProduct" />
+  <xs:complexType name="AxdEcoResProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" type="tns:AxdEntity_Product_EcoResProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_Product_EcoResProduct" abstract="true">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="DisplayProductNumber" type="st:AxdExtType_EcoResProductDisplayProductNumber" />
+      <xs:element minOccurs="1" name="ProductType" type="st:AxdEnum_EcoResProductType" />
+      <xs:element minOccurs="0" name="SearchName" nillable="true" type="st:AxdExtType_EcoResProductSearchName" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Translation" type="tns:AxdEntity_Translation" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductDimGroup" type="tns:AxdEntity_ProductDimGroup" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageDimGroup" type="tns:AxdEntity_StorageDimGroup" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrackingDimGroup" type="tns:AxdEntity_TrackingDimGroup" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Identifier" type="tns:AxdEntity_Identifier" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EcoResProductCategory" type="tns:AxdEntity_EcoResProductCategory" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WHSEcoResProductTransportationCodes" type="tns:AxdEntity_WHSEcoResProductTransportationCodes" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_Translation">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="LanguageId" type="st:AxdExtType_LanguageId" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_ProductDimGroup">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="Product" type="st:AxdExtType_EcoResProductDisplayProductNumber" />
+      <xs:element minOccurs="1" name="ProductDimensionGroup" type="st:AxdExtType_EcoResProductDimensionGroupName" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_StorageDimGroup">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="Product" type="st:AxdExtType_EcoResProductDisplayProductNumber" />
+      <xs:element minOccurs="1" name="StorageDimensionGroup" type="st:AxdExtType_EcoResStorageDimensionGroupName" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_TrackingDimGroup">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="Product" type="st:AxdExtType_EcoResProductDisplayProductNumber" />
+      <xs:element minOccurs="1" name="TrackingDimensionGroup" type="st:AxdExtType_EcoResTrackingDimensionGroupName" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_Identifier">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="ProductNumber" type="st:AxdExtType_EcoResProductNumber" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_EcoResProductCategory">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="CategoryHierarchy" type="st:AxdExtType_EcoResCategoryHierarchyName" />
+      <xs:element minOccurs="1" name="Category" type="st:AxdEntityKey_EcoResCategory" />
+      <xs:element minOccurs="1" name="Product" type="st:AxdExtType_EcoResProductDisplayProductNumber" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_WHSEcoResProductTransportationCodes">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="Product" type="st:AxdExtType_EcoResProductDisplayProductNumber" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_Product_EcoResDistinctProduct">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AxdEntity_Product_EcoResProduct">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_Product_EcoResProductMaster">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AxdEntity_Product_EcoResProduct">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="VariantConfigurationTechnology" type="st:AxdEnum_EcoResVariantConfigurationTechnologyType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_Product_EcoResDistinctProductVariant">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AxdEntity_Product_EcoResDistinctProduct">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="ProductMaster" type="st:AxdExtType_EcoResProductDisplayProductNumber" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="VariantDimValue" type="tns:AxdEntity_VariantDimValue_EcoResProductVariantDimensionValue" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_VariantDimValue_EcoResProductVariantDimensionValue" abstract="true">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="DistinctProductVariant" type="st:AxdExtType_EcoResProductDisplayProductNumber" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_VariantDimValue_EcoResProductVariantColor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AxdEntity_VariantDimValue_EcoResProductVariantDimensionValue">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="Color" type="st:AxdExtType_EcoResColorName" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="EcoResColor" type="tns:AxdEntity_EcoResColor" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_EcoResColor">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="Name" type="st:AxdExtType_EcoResColorName" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_VariantDimValue_EcoResProductVariantConfiguration">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AxdEntity_VariantDimValue_EcoResProductVariantDimensionValue">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="Configuration" type="st:AxdExtType_EcoResConfigurationName" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="EcoResConf" type="tns:AxdEntity_EcoResConf" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_EcoResConf">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="Name" type="st:AxdExtType_EcoResConfigurationName" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_VariantDimValue_EcoResProductVariantSize">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AxdEntity_VariantDimValue_EcoResProductVariantDimensionValue">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="Size" type="st:AxdExtType_EcoResSizeName" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="EcoResSize" type="tns:AxdEntity_EcoResSize" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_EcoResSize">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="Name" type="st:AxdExtType_EcoResSizeName" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_VariantDimValue_EcoResProductVariantStyle">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AxdEntity_VariantDimValue_EcoResProductVariantDimensionValue">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="Style" type="st:AxdExtType_EcoResStyleName" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="EcoResStyle" type="tns:AxdEntity_EcoResStyle" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AxdEntity_EcoResStyle">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="Name" type="st:AxdExtType_EcoResStyleName" />
+    </xs:sequence>
+    <xs:attribute fixed="entity" name="class" use="required" />
+    <xs:attribute name="action" type="st:AxdEnum_AxdEntityAction" />
+  </xs:complexType>
+</xs:schema>
