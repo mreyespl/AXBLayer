@@ -50,7 +50,7 @@ namespace AXBLayer.Controllers
                 return new string[] { e.Message};
             }
 
-            return new string[] { "value1", "value2" };
+            return new string[] { "value1", "value2" };  
         }
 
         // GET: api/Product/5
